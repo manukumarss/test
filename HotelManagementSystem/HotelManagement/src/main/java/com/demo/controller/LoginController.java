@@ -34,9 +34,6 @@ public class LoginController {
 	public @ResponseBody String validateUser(@RequestBody User userobj, HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
 		String result = "failure";
-		String email_id = userobj.getEmailId();
-		String passWord = userobj.getPassword();
-		System.out.println("login");
 		String user = userService.validateUser(email_id, passWord, response);
 		if (user == null) {
 			LOGGER.info("Invalid Credentails for User : {}");
